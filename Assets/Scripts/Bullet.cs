@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public int damage;
+
+    private void OnTriggerEnter(Collider other)
     {
-        Destroy(transform);
+        Enemy curr = other.GetComponent<Enemy>();
+        if (curr != null)
+        {
+            curr.health -= damage;
+        }
+        Destroy(transform.gameObject);
     }
 }

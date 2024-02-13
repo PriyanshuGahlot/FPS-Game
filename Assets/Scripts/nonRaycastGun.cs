@@ -12,11 +12,12 @@ public class nonRaycastGun : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonDown("Fire 1"))
+        if(Input.GetMouseButtonDown(0))
         {
             GameObject curr = Instantiate(bullet, shootFrom.position, Quaternion.identity);
             curr.GetComponent<Rigidbody>().useGravity = hasGravity;
             curr.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+            curr.transform.forward = Camera.main.transform.forward;
         }
     }
 
