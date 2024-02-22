@@ -11,8 +11,13 @@ public class Enemy : MonoBehaviour
         if (health <= 0) Die();
     }
 
+    public void TakeDamage(int dmg)
+    {
+        health -= dmg;
+    }
+
     void Die()
     {
-
+        Debug.Log("Dead");
     }
 }
