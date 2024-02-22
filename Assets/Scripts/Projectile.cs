@@ -7,32 +7,34 @@ using UnityEngine.Rendering;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float Force;
-    public float Lift;
-    public float Damage;
-
-    public GameObject throwable;
-    public Transform WeaponOffset;
-    public float SpawnAfter;
+    public List<GameObject> throwables;
 
     bool InHand = true;
     bool Wait = false;
+    float Force;
+    float Lift;
+    public Transform spawnPos;
+    float SpawnAfter;
+    GameObject throwable;
 
     GameObject currThrowable;
-    
-
 
     void Start()
     {
+        setThrowable(throwables[0].GetComponent<Throwable>());
         Spawn();
     }
 
-    // Update is called once per frame
+    void setThrowable(Throwable changeTo)
+    {
+        Force = changeTo.Force;
+        Lift = changeTo.Lift;
+        SpawnAfter = changeTo.SpawnAfter;
+        throwable = changeTo.gameObject;
+    }
+
     void Update()
     {
-        
-        
         if (Input.GetMouseButtonDown(0) && InHand)
         {
             currThrowable.GetComponent<Rigidbody>().isKinematic = false;
@@ -54,7 +56,7 @@ public class Projectile : MonoBehaviour
 
     void Spawn()
     {
-        currThrowable = Instantiate(throwable,WeaponOffset.position,Quaternion.identity);
+        currThrowable = Instantiate(throwable,spawnPos.position,Quaternion.identity);
         currThrowable.GetComponent<Rigidbody>().isKinematic = true;
         currThrowable.transform.parent = Camera.main.transform;
         currThrowable.transform.rotation = transform.rotation;

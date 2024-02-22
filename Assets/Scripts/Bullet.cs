@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
         Enemy curr = other.GetComponent<Enemy>();
         if (curr != null)
         {
-            curr.health -= damage;
+            curr.TakeDamage(damage);
         }
         Destroy(transform.gameObject);
     }
