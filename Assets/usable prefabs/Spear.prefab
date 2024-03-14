@@ -14,7 +14,10 @@ GameObject:
   - component: {fileID: -5238699518522610410}
   - component: {fileID: 2811585418550747451}
   - component: {fileID: 8511790651388358366}
-  m_Layer: 0
+  - component: {fileID: -2246599993583214698}
+  - component: {fileID: 6407074184054319950}
+  - component: {fileID: -5006208228664006130}
+  m_Layer: 7
   m_Name: Spear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,8 +137,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00802105, y: 0.01207373, z: 0.17044862}
-  m_Center: {x: 0.0000000027939673, y: 0, z: 0.011074319}
+  m_Size: {x: 0.00802105, y: 0.01207373, z: 0.14451429}
+  m_Center: {x: 0.0000000029769378, y: 0, z: -0.0018928349}
 --- !u!114 &8511790651388358366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +152,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   com: {fileID: 6586537352116824149}
+--- !u!114 &-2246599993583214698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518482591737925558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c24fe69e090f4478cd8b15879b95a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 20
+  Lift: 0.3
+  SpawnAfter: 1
+  inAir: 0
+--- !u!136 &6407074184054319950
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518482591737925558}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.003
+  m_Height: 0.03
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.08}
+--- !u!114 &-5006208228664006130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518482591737925558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7851a2f217720654f8c5f900ea310fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7938792052545071016
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6586537352116824149}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: com
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +228,7 @@ Transform:
   m_GameObject: {fileID: 7938792052545071016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0024, y: 0, z: 0.0685}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
