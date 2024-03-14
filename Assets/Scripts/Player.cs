@@ -4,27 +4,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int Health;
-    int currHealth;
-
-    private void Start()
+    public float maxHealth = 100;
+    private float currentHealth;
+    void Start()
     {
-        currHealth = Health;
+        currentHealth = maxHealth;
+    }
+    public void takeDamage(float damageAmount)
+    {
+        currentHealth -= damageAmount;
     }
 
-    private void Update()
+
+    void Update()
     {
-        if (currHealth <= 0) Die();
+        if (currentHealth <= 0)
+        {
+            //die
+        }
     }
-
-    public void fullHeal()
-    {
-        currHealth = Health;
-    }
-
-    void Die()
-    {
-
-    }
-
 }
