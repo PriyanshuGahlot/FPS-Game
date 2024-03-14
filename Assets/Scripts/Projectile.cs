@@ -40,6 +40,7 @@ public class Projectile : MonoBehaviour
             currThrowable.GetComponent<Rigidbody>().isKinematic = false;
             currThrowable.GetComponent<Rigidbody>().AddForce((Camera.main.transform.forward+Vector3.up*Lift)*Force,ForceMode.Impulse);
             currThrowable.transform.SetParent(null);
+            currThrowable.GetComponent<Throwable>().inAir = true;
             InHand = false;
             Wait = false;
             
