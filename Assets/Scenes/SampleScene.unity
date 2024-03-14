@@ -2399,6 +2399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwables:
   - {fileID: 2518482591737925558, guid: 4c256eb60fe1b2241902ce0940aa1fdb, type: 3}
+  - {fileID: 1401384791337571297, guid: 5ec4f58ae70f5a34b8419e677d2d8215, type: 3}
   spawnPos: {fileID: 1202892109}
 --- !u!4 &3080596598150299742
 Transform:
