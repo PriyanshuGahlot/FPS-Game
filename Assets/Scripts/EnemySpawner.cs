@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnAfter;
     public LayerMask noPlayerNoEnemy;
     public GameObject enemy;
+    public float maxEnemiesAtTime;
 
     float currTime;
 
@@ -23,23 +24,27 @@ public class EnemySpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        currTime -= Time.fixedDeltaTime;
-        if (currTime <= 0)
+        if (FindObjectsOfType<Enemy>().Length < maxEnemiesAtTime)
         {
-            List<GameObject> hidden = new List<GameObject>();
-            foreach (GameObject point in spawnPoints)
+            currTime -= Time.fixedDeltaTime;
+            if (currTime <= 0)
             {
-                if (Physics.Raycast(transform.position, point.transform.position - transform.position, Vector3.Distance(transform.position, point.transform.position), noPlayerNoEnemy)){
-                    hidden.Add(point);
+                List<GameObject> hidden = new List<GameObject>();
+                foreach (GameObject point in spawnPoints)
+                {
+                    if (Physics.Raycast(transform.position, point.transform.position - transform.position, Vector3.Distance(transform.position, point.transform.position), noPlayerNoEnemy))
+                    {
+                        hidden.Add(point);
+                    }
                 }
+                if (hidden.Count > 0)
+                {
+                    int i = Random.Range(0, hidden.Count);
+                    spawn(hidden[i].transform.position);
+                    hidden.Clear();
+                }
+                currTime = spawnAfter;
             }
-            if (hidden.Count > 0)
-            {
-                int i = Random.Range(0, hidden.Count);
-                spawn(hidden[i].transform.position);
-                hidden.Clear();
-            }
-            currTime = spawnAfter;
         }
     }
 
