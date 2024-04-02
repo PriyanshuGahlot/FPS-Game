@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartMenuScene.unity
+    guid: 13658eebfc5194d4eb4d1b5bf493d836
+  - enabled: 1
+    path: Assets/Scenes/dinosaur.unity
+    guid: 38f2f9bf11f5eae43b28896536d9dd7d
+  - enabled: 1
+    path: Assets/Scenes/Stone age.unity
+    guid: 85e693980000d3041ad93176666fa88c
+  - enabled: 1
+    path: Assets/Scenes/witchcraft.unity
+    guid: 22ab026e5da49a648869f45ab583c45c
+  - enabled: 1
+    path: Assets/Scenes/world war.unity
+    guid: dc2aab81d68fa5642b40062d1a0720f4
   m_configObjects: {}

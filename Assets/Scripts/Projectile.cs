@@ -58,6 +58,7 @@ public class Projectile : MonoBehaviour
     void Spawn()
     {
         currThrowable = Instantiate(throwable,spawnPos.position,Quaternion.identity);
+        currThrowable.transform.rotation = spawnPos.rotation;
         currThrowable.GetComponent<Rigidbody>().isKinematic = true;
         currThrowable.transform.parent = Camera.main.transform;
         currThrowable.transform.rotation = transform.rotation;
