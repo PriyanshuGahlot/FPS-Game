@@ -10,28 +10,28 @@ using System;
 public class Menu : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public Dropdown resDropdown;
-    Resolution[] resolutions;
+    public GameObject mainMenu;
+    public GameObject settingsMenu;
 
     private void Start() {
-        resolutions = Screen.resolutions;
-        resDropdown.ClearOptions();
-        List<string> options = new List<string>();
-        int resindex = 0;
-        for (int i=0; i<resolutions.Length; i++)
-        {
-            string option = resolutions[i].width+" x "+resolutions[i].height;
-            options.Add(option);
+        //resolutions = Screen.resolutions;
+        //resDropdown.ClearOptions();
+        //List<string> options = new List<string>();
+        //int resindex = 0;
+        //for (int i=0; i<resolutions.Length; i++)
+        //{
+        //    string option = resolutions[i].width+" x "+resolutions[i].height;
+        //    options.Add(option);
 
-            if (resolutions[i].height == Screen.currentResolution.height 
-            && resolutions[i].width == Screen.currentResolution.width)
-            {
-                resindex = i;
-            }
-        }
-        resDropdown.AddOptions(options);
-        resDropdown.value = resindex;
-        resDropdown.RefreshShownValue();
+        //    if (resolutions[i].height == Screen.currentResolution.height 
+        //    && resolutions[i].width == Screen.currentResolution.width)
+        //    {
+        //        resindex = i;
+        //    }
+        //}
+        //resDropdown.AddOptions(options);
+        //resDropdown.value = resindex;
+        //resDropdown.RefreshShownValue();
 
     }
     public void Play()
@@ -51,17 +51,17 @@ public class Menu : MonoBehaviour
         audioMixer.SetFloat("Volume",Volume); //AudioMixer - expose parameter and rename to "Volume"
     }
 
-    // public void Quality (int Quality)
-    // {
-    //     Debug.Log(Quality);
-    //     QualitySettings.SetQualityLevel(Quality+1);
-    // }
+    public void settings()
+    {
+        mainMenu.SetActive(false);
+        settingsMenu.SetActive(true);
+    }
 
-    // public void SetFullscreen (bool isFullscreen)
-    // {
-    //     Debug.Log("Fullscreen :"+isFullscreen);
-    //     Screen.fullScreen = isFullscreen;
-    // }
+    public void back()
+    {
+        mainMenu.SetActive(true);
+        settingsMenu.SetActive(false);
+    }
 
     public void Click()
     {
