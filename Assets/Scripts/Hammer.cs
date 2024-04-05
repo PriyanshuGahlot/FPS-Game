@@ -9,7 +9,7 @@ public class Hammer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //transform.rotation = Quaternion.EulerAngles(new Vector3(-90, 0, 90));
+        transform.localRotation = Quaternion.Euler(new Vector3(0, 90, 0));
         This = GetComponent<Throwable>();
         transform.GetComponent<Rotation>().enabled = false;
     }
