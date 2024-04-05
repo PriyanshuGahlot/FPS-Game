@@ -13,7 +13,10 @@ public class Menu : MonoBehaviour
     public GameObject mainMenu;
     public GameObject settingsMenu;
 
+    SoundManager soundManager;
+
     private void Start() {
+        soundManager = FindObjectOfType<SoundManager>();
         //resolutions = Screen.resolutions;
         //resDropdown.ClearOptions();
         //List<string> options = new List<string>();
@@ -36,11 +39,13 @@ public class Menu : MonoBehaviour
     }
     public void Play()
     {
+        click();
         Debug.Log("LOADING");
         SceneManager.LoadSceneAsync(1);
     }
     public void Quit()
     {
+        click();
         Debug.Log("QUIT");
         Application.Quit();
     }
@@ -53,20 +58,24 @@ public class Menu : MonoBehaviour
 
     public void settings()
     {
+        click();
         mainMenu.SetActive(false);
         settingsMenu.SetActive(true);
     }
 
     public void back()
     {
+        click();
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
     }
 
-    public void Click()
+    public void click()
     {
-        Debug.Log("CLICKED");
+        soundManager.Play("click1");
     }
+
+    
 
 
 
