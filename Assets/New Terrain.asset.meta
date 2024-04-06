@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/New Terrain.asset.meta
 guid: c686d0fbc5a038449a8e977c7390e8bb
+=======
+<<<<<<< HEAD
+guid: f00917e0f4a029c459690f335c5d9277
+=======
+guid: a3db92d1ddc8caa44b7f08c9fec97dfd
+>>>>>>> 447e58308c121a292b2ddc6c8107286c507159d1
+>>>>>>> 883c70edd3f0a1496b40ad2f13049467a15209f6:Assets/witchera/New Terrain 2.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 15600000

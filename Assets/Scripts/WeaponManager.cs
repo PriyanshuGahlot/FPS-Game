@@ -22,6 +22,7 @@ public class WeaponManager : MonoBehaviour
             era.secondary.SetActive(false);
         }
         LoadOut curr = Eras[level - 1];
+        Debug.Log(level - 1);
         curr.primary.SetActive(true);
         curr.secondary.SetActive(true);
     }
