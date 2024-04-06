@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 1927622280693918108}
   - component: {fileID: 1732663199763543502}
   - component: {fileID: 365827193423517234}
+  - component: {fileID: 6221594696428492472}
   m_Layer: 0
   m_Name: Nade
   m_TagString: Untagged
@@ -201,6 +202,23 @@ MonoBehaviour:
   Force: 5
   Lift: 1
   SpawnAfter: 1
+  inAir: 0
+--- !u!114 &6221594696428492472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401384791337571297}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2feabe45525ac4cb77966e1ea345dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aroundX: 1
+  aroundY: 1
+  aroundZ: 1
+  RoationSpeed: 100
 --- !u!1 &5954444250796137507
 GameObject:
   m_ObjectHideFlags: 0

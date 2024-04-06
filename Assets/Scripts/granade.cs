@@ -19,6 +19,8 @@ public class granade : MonoBehaviour
     private void Update()
     {
         if (bounces >= maxBounces) blast();
+        if (transform.GetComponent<Throwable>().inAir) transform.GetComponent<Rotation>().enabled = true;
+        else transform.GetComponent<Rotation>().enabled = false;
     }
 
     void blast()
